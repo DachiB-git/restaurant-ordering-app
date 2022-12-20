@@ -153,7 +153,7 @@ li span {
 }
 .remove-btn {
   border: none;
-  background: none;
+  background: #fff;
   font-size: 12px;
   color: #bbbbbb;
   font-weight: 400;
@@ -223,9 +223,9 @@ li span {
 .btn:focus {
   filter: brightness(80%);
 }
-.remove-btn:hover,
-.remove-btn:focus {
-  background-color: #3c3c3c;
+.add-item-btn:hover,
+.add-item-btn:focus {
+  background-color: #bbbbbb;
 }
 .hidden {
   display: none;
