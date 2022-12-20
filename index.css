@@ -220,10 +220,12 @@ li span {
   padding: 10px;
 }
 .btn:hover,
-.btn:focus,
+.btn:focus {
+  filter: brightness(80%);
+}
 .remove-btn:hover,
 .remove-btn:focus {
-  filter: brightness(80%);
+  background-color: #3c3c3c;
 }
 .hidden {
   display: none;
