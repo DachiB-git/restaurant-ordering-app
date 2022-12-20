@@ -23,10 +23,24 @@
                     <div class="price-section">
                        <p>Total price:</p><span id="order-total-price"></span>
                     </div>
-                    <button class="complete-order-btn" id="complete-order-btn">Complete order</button> 
+                    <button class="btn" id="complete-order-btn">Complete order</button> 
                 </div>
             </section>
+              <div class="order-complete hidden" id="order-complete">
+                  <p class="complementary-text">Thanks, <span id="payer-name"></span>! Your order is on its way!</p>
+              </div>
         </main>
+        <div class="payment-modal hidden">
+            <div class="payment-modal-inner">
+                <h1 class="modal-title">Enter card details</h1>
+                 <form class="payment-form">
+                     <input type="text" placeholder="Enter your name" name="name"  required/>
+                     <input type="number" placeholder="Enter card number" name="card-number"  required/>
+                     <input type="number" placeholder="Enter CCV" name="cvv" required />
+                     <button type="submit" class="btn" id="pay-order-btn">Pay</button>
+                 </form>
+            </div>
+        </div>
 	<script src="index.js" type="module"></script>
     </body>
 </html>

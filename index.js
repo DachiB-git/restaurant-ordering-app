@@ -3,14 +3,27 @@ import {menuArray} from "./data.js"
 
 const menu = document.getElementById('menu');
 const order = document.getElementById('order');
+const paymentForm = document.querySelector('.payment-form');
 let orderedItems = []
 document.addEventListener('click', (e)=>{
     if(e.target.dataset.add){
+         document.getElementById('order-complete').classList.add("hidden")
         addItem(e.target.dataset.add);
     } else if (e.target.dataset.remove){
         removeItem(e.target.dataset.remove)
-    }
+    } else if(e.target.id === 'complete-order-btn') {
+         document.querySelector('.payment-modal').classList.toggle('hidden')
+    } 
     
+})
+document.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const paymentFormData = new FormData (paymentForm);
+        document.getElementById('payer-name').textContent = paymentFormData.get('name')
+        document.querySelector('.payment-modal').classList.toggle('hidden');
+        document.getElementById('order').classList.toggle("hidden");
+        document.getElementById('order-complete').classList.remove("hidden")
+        orderedItems = []
 })
 function addItem(itemId) {
     const chosenItem = menuArray.filter(item => {
